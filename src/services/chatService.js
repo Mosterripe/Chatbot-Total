@@ -24,7 +24,7 @@ const getAIResponse = async (userMessage, conversationHistory) => {
         "Authorization": `Bearer ${DEEPINFRA_API_KEY}`
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: "meta-llama/Meta-Llama-3-70B-Instruct",
         messages: messagesForAPI,
         temperature: 0.7,
         max_tokens: 150,
