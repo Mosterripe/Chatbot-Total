@@ -10,7 +10,7 @@ import ChatContainer from "@/components/ChatContainer";
 import ChatInput from "@/components/ChatInput";
 import { getAIResponse, saveMessages, loadMessages, clearMessages } from "@/services/chatService";
 
-const OPENAI_API_KEY = import.meta.env.VITE_DEEPINFRA_API_KEY;
+const DEEPINFRA_API_KEY = import.meta.env.VITE_DEEPINFRA_API_KEY;
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -19,7 +19,7 @@ function App() {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (!OPENAI_API_KEY) {
+    if (!DEEPINFRA_API_KEY) {
       setApiKeyMissing(true);
       toast({
         title: "Configuración Requerida",
@@ -105,7 +105,7 @@ function App() {
           >
             <AlertTriangle size={20} />
             <p className="text-sm font-medium">
-              La clave API de OpenAI (VITE_OPENAI_API_KEY) no está configurada en tus variables de entorno. La IA no funcionará.
+              La clave API de OpenAI (VITE_DEEPINFRA_API_KEY) no está configurada en tus variables de entorno. La IA no funcionará.
             </p>
           </motion.div>
         )}

@@ -1,8 +1,8 @@
 
-const OPENAI_API_KEY = import.meta.env.VITE_DEEPINFRA_API_KEY;
+const DEEPINFRA_API_KEY = import.meta.env.VITE_DEEPINFRA_API_KEY;
 
 const getAIResponse = async (userMessage, conversationHistory) => {
-  if (!OPENAI_API_KEY) {
+  if (!DEEPINFRA_API_KEY) {
     console.error("DeepInfra API key no está configurada.");
     return "Lo siento, no puedo conectarme al servicio de IA en este momento. Por favor, asegúrate de que la clave API de DeepInfra esté configurada.";
   }
