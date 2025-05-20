@@ -9,14 +9,28 @@
 		<style>
     /* Estilos para el footer */
     footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;  /* Fijo en la parte inferior */
-      bottom: 0;
-      width: 100%;
-    }
+  background: rgba(0, 0, 0, 0.2); /* Fondo transparente oscuro */
+  backdrop-filter: blur(8px);      /* Efecto de vidrio esmerilado */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  color: white;
+  text-align: center;
+  padding: 0.5rem 1rem;           /* Más compacto */
+  font-size: 0.8rem;              /* Texto pequeño */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+footer a {
+  color: #a0e7a0;                 /* Verde claro para enlaces */
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer p {
+  margin: 0.3rem 0;               /* Espaciado reducido */
+}
 	</style>
 	</head>
 	<body>
