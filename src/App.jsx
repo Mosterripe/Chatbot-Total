@@ -10,7 +10,7 @@ import ChatContainer from "@/components/ChatContainer";
 import ChatInput from "@/components/ChatInput";
 import { getAIResponse, saveMessages, loadMessages, clearMessages } from "@/services/chatService";
 
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+const OPENAI_API_KEY = import.meta.env.VITE_DEEPINFRA_API_KEY;
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -23,7 +23,7 @@ function App() {
       setApiKeyMissing(true);
       toast({
         title: "Configuración Requerida",
-        description: "La clave API de OpenAI no está configurada. Por favor, añádela a tus variables de entorno.",
+        description: "La clave API de DeepInfra no está configurada. Por favor, añádela a tus variables de entorno.",
         variant: "destructive",
         duration: Infinity,
       });
@@ -36,7 +36,7 @@ function App() {
     if (apiKeyMissing) {
       toast({
         title: "Error de Configuración",
-        description: "No se puede enviar mensaje. Falta la clave API de OpenAI.",
+        description: "No se puede enviar mensaje. Falta la clave API de DeepInfra.",
         variant: "destructive",
       });
       return;

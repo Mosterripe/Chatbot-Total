@@ -1,10 +1,10 @@
 
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+const OPENAI_API_KEY = import.meta.env.VITE_DEEPINFRA_API_KEY;
 
 const getAIResponse = async (userMessage, conversationHistory) => {
   if (!OPENAI_API_KEY) {
-    console.error("OpenAI API key no está configurada.");
-    return "Lo siento, no puedo conectarme al servicio de IA en este momento. Por favor, asegúrate de que la clave API de OpenAI esté configurada.";
+    console.error("DeepInfra API key no está configurada.");
+    return "Lo siento, no puedo conectarme al servicio de IA en este momento. Por favor, asegúrate de que la clave API de DeepInfra esté configurada.";
   }
 
   const messagesForAPI = [
@@ -17,11 +17,11 @@ const getAIResponse = async (userMessage, conversationHistory) => {
   ];
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("https://api.deepinfra.com/v1/openai/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${OPENAI_API_KEY}`
+        "Authorization": `Bearer ${DEEPINFRA_API_KEY}`
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
