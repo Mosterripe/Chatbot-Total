@@ -14,11 +14,16 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
   color: white;
   text-align: center;
-  padding: 0.5rem 1rem;           /* Más compacto */
-  font-size: 0.8rem;              /* Texto pequeño */
+  padding: 10px;
+  font-size: 0.8rem;
   position: fixed;
-  bottom: 0;
+  bottom: 15px;  /* Ajusta este valor para subir/bajar el footer */
+  left: 0;
+  right: 0;
   width: 100%;
+  border-radius: 8px 8px 0 0;  /* Bordes redondeados solo arriba */
+  margin: 0 auto;
+  max-width: 95%;  /* Opcional: para no tocar los bordes de la pantalla */
   z-index: 100;
 }
 
